@@ -1,0 +1,19 @@
+使用git进行clone:
+（一）不使用代理
+		> git clone https://github.com/sdgtliuwei/LvWork.git
+		> git clone http://github.com/sdgtliuwei/LvWork.git
+		> git clone git@github.com:sdgtliuwei/LvWork.git
+（二）使用代理
+	在使用代理情况下，还按照上述方法download代码，会出现如下错误：
+	Cloning into 'LvWork'...
+	fatal: unable to access 'https://github.com/sdgtliuwei/LvWork.git/': Failed connect to github.com:443; No error
+	遇到错误，克隆失败。通过执行telnet github.com 443，发现网络不通，于是想到忘记设置代理：
+	方法 1) 打开文件.gitconfig，文件位于用户主目录下，执行ls ~即可看到它。假设Win7登录用户名为tom，则位于C:\Users\tom目录下的gitconfig，在文件尾加入以下内容：
+			[http]
+				proxy = http://www.proxy.com:8080/
+
+		[http]顶格写，proxy前保留一个tab，其中www.proxy.com为代理服务器的IP或域名。
+	方法 2)执行命令： git config --global http.proxy 代理服务器的IP或域名:端口
+
+	完成后，再次执行git clone http(s)://github.com/sdgtliuwei/LvWork.git，成功!!!
+	Great!
