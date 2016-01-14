@@ -69,3 +69,4 @@ if __name__ == "__main__":
     query(conn, query_sql)
     change_sql = ["insert into user_info_table values('a', 'aa', 'aaa', 1)"]
     change(conn, change_sql)
+    close(conn)
