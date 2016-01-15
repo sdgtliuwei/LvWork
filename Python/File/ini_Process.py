@@ -42,32 +42,3 @@ config.remove_section("section1")
 config.remove_option("section2", "name")
 config.write(open("Test.ini", "w")) 
 config.clear()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
